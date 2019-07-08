@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SettingsScript : MonoBehaviour
+public class NewDownMem : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -14,9 +14,5 @@ public class SettingsScript : MonoBehaviour
     void Update()
     {
         
-    }
-    public void MoreGames()
-    {
-        Application.OpenURL("https://play.google.com/store/apps/details?id=com.kamikaze.close2");
     }
 }
