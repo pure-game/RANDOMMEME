@@ -21,6 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Gameplay.unity
     guid: a09c586c05ccbca44a0bc48f5ec75f71
   - enabled: 1
-    path: Assets/Scenes/DowmMem.unity
+    path: Assets/Scenes/DownMem.unity
     guid: 974e882ec9cc85c45be4a63f37da9cd9
   m_configObjects: {}

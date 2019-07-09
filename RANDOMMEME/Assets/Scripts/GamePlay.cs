@@ -25,7 +25,6 @@ public class GamePlay : MonoBehaviour
 
     public void ButtonClick()
     {
-
         memeImage.sprite = Resources.Load<Sprite>("meme_" + Random.Range(1, 50));
         upMeme.text = MainMenu.strings_up[Random.Range(0, MainMenu.strings_up.Count)];
         downMeme.text = MainMenu.strings_down[Random.Range(0, MainMenu.strings_down.Count)];

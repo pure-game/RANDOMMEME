@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
 
     public static List<string> strings_up;
     public static List<string> strings_down;
+
     public static bool Started = true;
+    public Image image;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,15 +22,14 @@ public class MainMenu : MonoBehaviour
             strings_down = new List<string>();
             AddDownMemes();
             AddUpMemes();
-            Save();
             Started = false;
-        }
+        }          
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        TapAnimation();
     }
 
     public void AddUpMemes()
@@ -169,22 +172,8 @@ public class MainMenu : MonoBehaviour
         strings_down.Add("U'll get ur asscrack blocked");
     }
 
-    public static void Save()
+    public void TapAnimation()
     {
-        //Convert to Json
-        string jsonDataUp = JsonUtility.ToJson(strings_up);
-        //Save Json string
-        PlayerPrefs.SetString("MySettings", jsonDataUp);
-        PlayerPrefs.Save();
-
-        //Convert to Json
-        string jsonDataDown = JsonUtility.ToJson(strings_down);
-        //Save Json string
-        PlayerPrefs.SetString("MySettings", jsonDataDown);
-        PlayerPrefs.Save();
-
-        print(strings_up.Count);
     }
-
 
 }
