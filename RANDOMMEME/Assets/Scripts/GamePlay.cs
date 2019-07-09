@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using GoogleMobileAds.Api;
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -11,13 +12,14 @@ public class GamePlay : MonoBehaviour
     public TextMeshProUGUI upMeme;
     public TextMeshProUGUI downMeme;
     public int adsBuy = 0;
-    public const string bannerID = "ca-app-pub-7272958162561065/4152458345";
-    public const string adID = "ca-app-pub-7272958162561065/4152458345";
+    private InterstitialAd interstitial;
+
 
     // Start is called before the first frame update
     void Start()
     {
         memeImage = GameObject.Find("MainImage").GetComponent<Image>();
+        RequestInterstitial();
     }
 
     // Update is called once per frame
@@ -28,21 +30,26 @@ public class GamePlay : MonoBehaviour
 
     public void ButtonClick()
     {
-       /* if(adsBuy == 0)
-        {
-            BannerView bannerView = new BannerView(bannerID, AdSize.Banner, AdPosition.Bottom);
-            AdRequest adRequest = new AdRequest.Builder().AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("320D89DA65836B55").Build();
-            bannerView.LoadAd(adRequest);
-
-            InterstitialAd interstitialAd = new InterstitialAd(adID);
-            AdRequest ad = new AdRequest.Builder().AddTestDevice(AdRequest.TestDeviceSimulator).AddTestDevice("320D89DA65836B55").Build();
-            interstitialAd.LoadAd(ad);
-            if (interstitialAd.IsLoaded()) interstitialAd.Show();
-        }*/
-
         memeImage.sprite = Resources.Load<Sprite>("meme_" + Random.Range(1, 50));
         upMeme.text = MainMenu.strings_up[Random.Range(0, MainMenu.strings_up.Count)];
-        downMeme.text = MainMenu.strings_down[Random.Range(0, MainMenu.strings_down.Count)];
+        downMeme.text = MainMenu.strings_down[Random.Range(0, MainMenu.strings_down.Count)];       
+        if (this.interstitial.IsLoaded())
+        {
+            this.interstitial.Show();
+        }
+    }
+
+    private void RequestInterstitial()
+    {
+        string adUnitId = "ca-app-pub-7272958162561065/9217082760";
+
+        // Initialize an InterstitialAd.
+        this.interstitial = new InterstitialAd(adUnitId);
+
+        // Create an empty ad request.
+        AdRequest request = new AdRequest.Builder().Build();
+        // Load the interstitial with the request.
+        this.interstitial.LoadAd(request);
     }
 
 }

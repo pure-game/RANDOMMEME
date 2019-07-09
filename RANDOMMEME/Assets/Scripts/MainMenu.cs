@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using GoogleMobileAds.Api;
 
 public class MainMenu : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class MainMenu : MonoBehaviour
     public static List<string> strings_up;
     public static List<string> strings_down;
     public static bool Started = true;
+
+    private BannerView bannerView;
+
+    public string appId = "ca-app-pub-7272958162561065~5553259565";
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +25,8 @@ public class MainMenu : MonoBehaviour
             AddUpMemes();
             Started = false;
         }
+        MobileAds.Initialize(appId);
+        this.RequestBanner();
     }
 
     // Update is called once per frame
@@ -168,22 +175,14 @@ public class MainMenu : MonoBehaviour
         strings_down.Add("U'll get ur asscrack blocked");
     }
 
-    /*public static void Save()
+    private void RequestBanner()
     {
-        //Convert to Json
-        string jsonDataUp = JsonUtility.ToJson(strings_up);
-        //Save Json string
-        PlayerPrefs.SetString("MySettings", jsonDataUp);
-        PlayerPrefs.Save();
+        string adUnitId = "ca-app-pub-7272958162561065/4152458345";
 
-        //Convert to Json
-        string jsonDataDown = JsonUtility.ToJson(strings_down);
-        //Save Json string
-        PlayerPrefs.SetString("MySettings", jsonDataDown);
-        PlayerPrefs.Save();
-
-        print(strings_up.Count);
-    }*/
-
+        // Create a 320x50 banner at the top of the screen.
+        bannerView = new BannerView(adUnitId, AdSize.Banner, AdPosition.Bottom);
+        AdRequest request = new AdRequest.Builder().Build();
+        bannerView.LoadAd(request);
+    }
 
 }
