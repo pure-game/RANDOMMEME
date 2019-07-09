@@ -971,7 +971,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96bd41382423c514994b57c95feaf830, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 0}
 --- !u!4 &1847051118
 Transform:
   m_ObjectHideFlags: 0
@@ -1462,12 +1461,12 @@ PrefabInstance:
     - target: {fileID: 5674831413539641014, guid: eb5841f48b7c7f242840ea3c63e58353,
         type: 3}
       propertyPath: m_PlayAutomatically
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5674831413539641014, guid: eb5841f48b7c7f242840ea3c63e58353,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: eb5841f48b7c7f242840ea3c63e58353, type: 3}

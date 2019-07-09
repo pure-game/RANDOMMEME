@@ -24,6 +24,8 @@ public class NewUpMem : MonoBehaviour
     {
         string newText = inputField.GetComponent<InputField>().text;
         MainMenu.strings_up.Add(newText);
+        print(MainMenu.strings_up.Count);
+        
     }
 
 

@@ -9,8 +9,8 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/UpMem.unity
-    guid: d3d63b90c37df6242806e5bfff96b876
+    path: Assets/Scenes/Gameplay.unity
+    guid: a09c586c05ccbca44a0bc48f5ec75f71
   - enabled: 1
     path: Assets/Scenes/Settings.unity
     guid: 117c2b49af384b04e844a016e91c6b44
@@ -18,8 +18,8 @@ EditorBuildSettings:
     path: Assets/Scenes/More.unity
     guid: 3cbdaad957a97fe4fab9c6d4a791e47f
   - enabled: 1
-    path: Assets/Scenes/Gameplay.unity
-    guid: a09c586c05ccbca44a0bc48f5ec75f71
+    path: Assets/Scenes/UpMem.unity
+    guid: d3d63b90c37df6242806e5bfff96b876
   - enabled: 1
     path: Assets/Scenes/DownMem.unity
     guid: 974e882ec9cc85c45be4a63f37da9cd9
