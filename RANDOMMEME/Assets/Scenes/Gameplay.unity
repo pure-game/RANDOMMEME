@@ -375,7 +375,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.10980393, g: 0.10196079, b: 0.10588236, a: 1}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1072,8 +1072,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   upMeme: {fileID: 1211223915}
   downMeme: {fileID: 1018567460}
-  strings_up: []
-  strings_down: []
+  adsBuy: 0
 --- !u!4 &1655141164
 Transform:
   m_ObjectHideFlags: 0
