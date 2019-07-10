@@ -30,5 +30,9 @@ public class SceneLoader : MonoBehaviour
     {
         Application.LoadLevel("MainMenu");
     }
+    public void LoadList()
+    {
+        Application.LoadLevel("List");
+    }
 
 }
