@@ -1,4 +1,5 @@
 ﻿using GoogleMobileAds.Api;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -30,9 +31,9 @@ public class GamePlay : MonoBehaviour
 
     public void ButtonClick()
     {
-        memeImage.sprite = Resources.Load<Sprite>("meme_" + Random.Range(1, 50));
-        upMeme.text = MainMenu.strings_up[Random.Range(0, MainMenu.strings_up.Count)];
-        downMeme.text = MainMenu.strings_down[Random.Range(0, MainMenu.strings_down.Count)];       
+        memeImage.sprite = Resources.Load<Sprite>("meme_" + UnityEngine.Random.Range(1, 50));
+        upMeme.text = MainMenu.strings_up[UnityEngine.Random.Range(0, MainMenu.strings_up.Count)];
+        downMeme.text = MainMenu.strings_down[UnityEngine.Random.Range(0, MainMenu.strings_down.Count)];       
         if (this.interstitial.IsLoaded())
         {
             this.interstitial.Show();
@@ -50,6 +51,13 @@ public class GamePlay : MonoBehaviour
         AdRequest request = new AdRequest.Builder().Build();
         // Load the interstitial with the request.
         this.interstitial.LoadAd(request);
+
+        this.interstitial.OnAdClosed += HandleOnAdClosed;
+
+        void HandleOnAdClosed(object sender, EventArgs args)
+        {
+            RequestInterstitial();
+        }
     }
 
 }
