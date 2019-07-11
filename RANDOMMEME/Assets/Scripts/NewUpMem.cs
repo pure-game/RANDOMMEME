@@ -23,9 +23,9 @@ public class NewUpMem : MonoBehaviour
     public void ClickButton()
     {
         string newText = inputField.GetComponent<InputField>().text;
-        MainMenu.strings_up.Add(newText);
-        print(MainMenu.strings_up.Count);
-        
+        MemLists.strings_up.Add(newText);
+        print(MemLists.strings_up.Count);
+        SaveAndLoad.Save();
     }
 
 

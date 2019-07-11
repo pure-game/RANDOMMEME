@@ -30,9 +30,13 @@ public class SceneLoader : MonoBehaviour
     {
         Application.LoadLevel("MainMenu");
     }
-    public void LoadList()
+    public void MyUpMeme()
     {
-        Application.LoadLevel("List");
+        Application.LoadLevel("MyUpMemes");
+    }
+    public void MyDownMeme()
+    {
+        Application.LoadLevel("MyDownMemes");
     }
 
 }
