@@ -31,16 +31,16 @@ public class NativeShare : MonoBehaviour
     }
 
     //"Делимся"
-    private void Share(string shareText, string imagePath, string url, string subject = "")
+    private void Share(string shareText, string imagePath, string url, string subject = "Share")
     {
         AndroidJavaClass intentClass = new AndroidJavaClass("android.content.Intent");
         AndroidJavaObject intentObject = new AndroidJavaObject("android.content.Intent");
 
         intentObject.Call<AndroidJavaObject>("setAction", intentClass.GetStatic<string>("ACTION_SEND"));
-        AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
+        /*AndroidJavaClass uriClass = new AndroidJavaClass("android.net.Uri");
         AndroidJavaObject uriObject = uriClass.CallStatic<AndroidJavaObject>("parse", "file://" + imagePath);
         intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_STREAM"), uriObject);
-        intentObject.Call<AndroidJavaObject>("setType", "image/png");
+        intentObject.Call<AndroidJavaObject>("setType", "image/png");*/
 
         intentObject.Call<AndroidJavaObject>("putExtra", intentClass.GetStatic<string>("EXTRA_TEXT"), shareText + "\n" + url);
 
@@ -50,6 +50,8 @@ public class NativeShare : MonoBehaviour
         AndroidJavaObject jChooser = intentClass.CallStatic<AndroidJavaObject>("createChooser", intentObject, subject);
         currentActivity.Call("startActivity", jChooser);
     }
+
+
 
     public void OnShareClicked()
     {
