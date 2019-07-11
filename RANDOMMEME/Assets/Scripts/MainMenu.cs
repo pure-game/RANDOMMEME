@@ -8,7 +8,8 @@ public class MainMenu : MonoBehaviour
 
     public static List<string> strings_up;
     public static List<string> strings_down;
-    public static bool Started = true;
+    public static int FirstLaunch = 0;
+    public static int isAdsOff = 0;
 
     private BannerView bannerView;
 
@@ -17,16 +18,27 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (Started)
+
+        if (FirstLaunch == 0)
         {
             strings_up = new List<string>();
             strings_down = new List<string>();
             AddDownMemes();
             AddUpMemes();
-            Started = false;
+
+            isAdsOff = 0;
+            PlayerPrefs.SetInt("isAdsOff", isAdsOff);
+            PlayerPrefs.Save();
+            print(isAdsOff);
+
+            FirstLaunch = 1;
         }
-        MobileAds.Initialize(appId);
-        this.RequestBanner();
+
+        if (PlayerPrefs.GetInt("isAdsOff", 0) == 0)
+        {
+            MobileAds.Initialize(appId);
+            this.RequestBanner();
+        }
     }
 
     // Update is called once per frame

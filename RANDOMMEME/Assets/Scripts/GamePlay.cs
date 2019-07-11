@@ -20,7 +20,10 @@ public class GamePlay : MonoBehaviour
     void Start()
     {
         memeImage = GameObject.Find("MainImage").GetComponent<Image>();
-        RequestInterstitial();
+        if (PlayerPrefs.GetInt("isAdsOff", 0) == 0)
+        {
+            RequestInterstitial();
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class GamePlay : MonoBehaviour
         memeImage.sprite = Resources.Load<Sprite>("meme_" + UnityEngine.Random.Range(1, 50));
         upMeme.text = MainMenu.strings_up[UnityEngine.Random.Range(0, MainMenu.strings_up.Count)];
         downMeme.text = MainMenu.strings_down[UnityEngine.Random.Range(0, MainMenu.strings_down.Count)];       
-        if (this.interstitial.IsLoaded())
+        if (interstitial != null && this.interstitial.IsLoaded())
         {
             this.interstitial.Show();
         }
