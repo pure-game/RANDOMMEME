@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DeleteMeme : MonoBehaviour
 {
-    public int id;
+    public string content;
     public string type;
 
     public void OnDelete()
@@ -12,9 +12,9 @@ public class DeleteMeme : MonoBehaviour
         Destroy(gameObject);
 
         if (type == "up")
-            MemLists.strings_up.RemoveAt(id);
+            MemLists.strings_up.Remove(content);
         else
-            MemLists.strings_down.RemoveAt(id);
+            MemLists.strings_down.Remove(content);
 
         SaveAndLoad.Save();
     }

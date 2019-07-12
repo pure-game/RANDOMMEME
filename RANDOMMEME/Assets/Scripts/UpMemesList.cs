@@ -15,7 +15,7 @@ public class UpMemesList : MonoBehaviour
             Transform text = child.GetChild(0);
             Transform button = child.GetChild(1);
 
-            child.GetComponent<DeleteMeme>().id = i;
+            child.GetComponent<DeleteMeme>().content = MemLists.strings_up[i];
             child.GetComponent<DeleteMeme>().type = "up";
 
             text.GetComponent<Text>().text  = MemLists.strings_up[i];

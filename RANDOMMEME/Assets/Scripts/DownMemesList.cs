@@ -15,7 +15,7 @@ public class DownMemesList : MonoBehaviour
             Transform text = child.GetChild(0);
             Transform button = child.GetChild(1);
 
-            child.GetComponent<DeleteMeme>().id = i;
+            child.GetComponent<DeleteMeme>().content = MemLists.strings_down[i];
             child.GetComponent<DeleteMeme>().type = "down";
 
             text.GetComponent<Text>().text  = MemLists.strings_down[i];
