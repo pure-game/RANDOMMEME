@@ -28,39 +28,60 @@ namespace VoxelBusters.NativePlugins.Internal
 
 		public abstract void AttachImage (Texture2D _texture);
 
-		#endregion
+        #endregion
 
-		#region Methods
+        #region Methods
 
-		/// <summary>
-		/// Captures the screenshot and adds the image for sharing.
-		/// </summary>
-		public void AttachScreenShot ()
+        /// <summary>
+        /// Captures the screenshot and adds the image for sharing.
+        /// </summary>
+        public void AttachScreenShot(Rect rect)
 		{
 			// Stop existing requests
 			StopAsyncRequests();
 
 			// Mark async operation in progress
-			ImageAsyncDownloadInProgress	= true;
+		    ImageAsyncDownloadInProgress	= true;
 
-			// Start loading screenshot data
-			m_takeScreenShotCoroutine		= TextureExtensions.TakeScreenshot((_texture)=>{
-				
-				// Share image
-				AttachImage(_texture);
-				
-				// Set properties
-				ImageAsyncDownloadInProgress	= false;
-			});
+		    // Start loading screenshot data
+            m_takeScreenShotCoroutine = TextureExtensions.TakeScreenshot(rect, (_texture) => {
 
-			NPBinding.Instance.StartCoroutine(m_takeScreenShotCoroutine);
+                // Share image
+                AttachImage(_texture);
+
+                // Set properties
+                ImageAsyncDownloadInProgress = false;
+            });
+
+            NPBinding.Instance.StartCoroutine(m_takeScreenShotCoroutine);
 		}
 
-		/// <summary>
-		/// Adds the specified image for sharing.
-		/// </summary>
-		/// <param name="_imagePath">Path of the image to be shared.</param>
-		public void AttachImageAtPath (string _imagePath)
+        public void AttachScreenShot()
+        {
+            // Stop existing requests
+            StopAsyncRequests();
+
+            // Mark async operation in progress
+            ImageAsyncDownloadInProgress = true;
+
+            // Start loading screenshot data
+            m_takeScreenShotCoroutine = TextureExtensions.TakeScreenshot((_texture) => {
+
+                // Share image
+                AttachImage(_texture);
+
+                // Set properties
+                ImageAsyncDownloadInProgress = false;
+            });
+
+            NPBinding.Instance.StartCoroutine(m_takeScreenShotCoroutine);
+        }
+
+        /// <summary>
+        /// Adds the specified image for sharing.
+        /// </summary>
+        /// <param name="_imagePath">Path of the image to be shared.</param>
+        public void AttachImageAtPath (string _imagePath)
 		{
 			// Stop existing requests
 			StopAsyncRequests();

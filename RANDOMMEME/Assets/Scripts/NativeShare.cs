@@ -6,6 +6,17 @@ using VoxelBusters.NativePlugins;
 public class NativeShare : MonoBehaviour
 {
 
+    [SerializeField] RectTransform screen;
+    [SerializeField] RectTransform imageRect;
+
+    Camera camera;
+    Rect image;
+
+    private void Start()
+    {
+        camera = GetComponent<Camera>();
+    }
+
     public void ShareScreenShotUsingShareSheet()
     {
         // Create share sheet
@@ -16,7 +27,15 @@ public class NativeShare : MonoBehaviour
         // _shareSheet.ExcludedShareOptions = m_excludedOptions;
 
         // Attaching screenshot here
-        _shareSheet.AttachScreenShot();
+        image = imageRect.rect;
+        Debug.Log(imageRect.position);
+        image.position = camera.WorldToScreenPoint(imageRect.position);
+        Debug.Log(image.position);
+        Debug.Log(image.size);
+        image.width *= camera.pixelWidth / screen.rect.width;
+        image.height *= camera.pixelHeight/ screen.rect.height;
+        Debug.Log(image.size);
+        _shareSheet.AttachScreenShot(image);
 
         // Show composer
         NPBinding.UI.SetPopoverPointAtLastTouchPosition();

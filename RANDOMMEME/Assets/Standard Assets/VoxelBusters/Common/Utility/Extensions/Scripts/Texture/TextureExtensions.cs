@@ -63,19 +63,37 @@ namespace VoxelBusters.Utility
 			return _newTexture;
 		}
 
-		#endregion
+        #endregion
 
-		#region Screenshot Methods
+        #region Screenshot Methods
 
-		public static IEnumerator TakeScreenshot (System.Action<Texture2D> _onCompletionHandler)
+        public static IEnumerator TakeScreenshot(System.Action<Texture2D> _onCompletionHandler)
+        {
+            Texture2D _texture;
+
+            yield return new WaitForEndOfFrame();
+
+            // Read pixel
+            _texture = new Texture2D(Screen.width, Screen.height);
+            _texture.ReadPixels(new Rect(0f, 0f, Screen.width, Screen.height), 0, 0);
+            _texture.Apply();
+
+            //Fire the callback if exists
+            if (_onCompletionHandler != null)
+            {
+                _onCompletionHandler(_texture);
+            }
+        }
+
+        public static IEnumerator TakeScreenshot (Rect rect, System.Action<Texture2D> _onCompletionHandler)
 		{
 			Texture2D _texture;
 			
 			yield return new WaitForEndOfFrame();
 			
 			// Read pixel
-			_texture	= new Texture2D(Screen.width, Screen.height);
-			_texture.ReadPixels(new Rect(0f, 0f, Screen.width, Screen.height),0,0);
+			_texture	= new Texture2D((int)rect.width, (int)rect.height);
+			_texture.ReadPixels(rect,0,0);
 			_texture.Apply();
 		
 			//Fire the callback if exists
