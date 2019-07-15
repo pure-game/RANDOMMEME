@@ -8,12 +8,12 @@ public class SettingsScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PurchaseManager.OnPurchaseNonConsumable += PurchaseManager_OnPurchaseNonConsumable;
+        PurchaseManager.OnPurchaseConsumable += PurchaseManager_OnPurchaseConsumable;
     }
 
-    private void PurchaseManager_OnPurchaseNonConsumable(PurchaseEventArgs args)
+    private void PurchaseManager_OnPurchaseConsumable(PurchaseEventArgs args)
     {
-        if(args.purchasedProduct.definition.id == "off_ads")
+        if(args.purchasedProduct.definition.id == "offads")
         {
             MainMenu.isAdsOff = 1;
             PlayerPrefs.SetInt("isAdsOff", MainMenu.isAdsOff);

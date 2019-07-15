@@ -26,7 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MyUpMemes.unity
     guid: d6d9f70cf491cc04992a400dd7c417f9
-  - enabled: 1
-    path: Assets/Scenes/MyDownMemes.unity
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/788c20bb87b61284d84601853466f9ee
     guid: 788c20bb87b61284d84601853466f9ee
   m_configObjects: {}

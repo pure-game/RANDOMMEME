@@ -464,7 +464,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   NC_PRODUCTS:
   - off_ads
-  C_PRODUCTS: []
+  C_PRODUCTS:
+  - offads
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1057,7 +1058,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 519420030}
-        m_MethodName: BuyNonConsumable
+        m_MethodName: BuyConsumable
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

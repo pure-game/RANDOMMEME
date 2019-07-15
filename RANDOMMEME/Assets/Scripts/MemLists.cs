@@ -36,14 +36,12 @@ public class MemLists
         strings_up.Add("U won't believe but");
         strings_up.Add("A bear jumped into the car and");
         strings_up.Add("Ur drunk dad didn't notice that");
-        strings_up.Add("Putin saw that");
         strings_up.Add("Yesterday in the evening all noticed");
         strings_up.Add("Last week there was shooting in the school again 'cause");
         strings_up.Add("Sad but");
-        strings_up.Add("Medvedev stole 2 billions and");
         strings_up.Add("U generated the funniest meme in the world despite the fact that");
         strings_up.Add("This meme is devoted to the coolest guys and");
-        strings_up.Add("Ahahahhahahahaha");
+        strings_up.Add("HAHAHAHAHAHAHAAHAH");
         strings_up.Add("What if i say to u that");
         strings_up.Add("Ur mom is so fat that");
         strings_up.Add("It's not hard to notice that");
@@ -57,7 +55,6 @@ public class MemLists
         strings_up.Add("U may not get it but");
         strings_up.Add("The discussion may last forever but");
         strings_up.Add("How to earn a 1000$?");
-        strings_up.Add("Mexicans are so dumb that");
         strings_up.Add("A blonde (bought) a new IPhone but");
         strings_up.Add("She wasn't sucking but");
         strings_up.Add("U won't last long cause");
@@ -95,18 +92,15 @@ public class MemLists
     public static void AddDownMemes()
     {
         strings_down.Add("Ur neighbor got his asscrack blown up");
-        strings_down.Add("How do u like this, Elon Musk? ");
-        strings_down.Add("We bought a bottle of Baltika");
+        strings_down.Add("We bought a bottle of RUSSIAN VODKA");
         strings_down.Add("Ur dad has a small penis");
         strings_down.Add("Tony has a huge dick");
         strings_down.Add("Here's Jonny!");
         strings_down.Add("U're a dumbass");
         strings_down.Add("U're worthless");
         strings_down.Add("U have a dumb face");
-        strings_down.Add("All ur relatives died cause of AIDS");
         strings_down.Add("We're all people");
         strings_down.Add("U have ass cancer");
-        strings_down.Add("U have cancer lol");
         strings_down.Add("F@#& u anyway");
         strings_down.Add("All ur friends are animals");
         strings_down.Add("I couldn't get an erection");
@@ -127,11 +121,9 @@ public class MemLists
         strings_down.Add("Ur girl smared herself with s@&t");
         strings_down.Add("In the next room an old man died");
         strings_down.Add("WHOEVER READ THIS WILL DIE!");
-        strings_down.Add("U have cancer");
         strings_down.Add("Piece of shieeeet");
         strings_down.Add("Take the L loooseeeerrr");
         strings_down.Add("THIS IS SPARTA!");
-        strings_down.Add("I'm faggot!");
         strings_down.Add("This app is a complete bullshit");
         strings_down.Add("The burger is cooling down:((");
         strings_down.Add("I hurt my tinypenis");
@@ -145,7 +137,7 @@ public class MemLists
         strings_down.Add("U farted and went limp");
         strings_down.Add("I accidently spent night with ur mom");
         strings_down.Add("U got beaten by homeless children");
-        strings_down.Add("I saw a pic where u're getting fucked by a big n#&&a");
+        strings_down.Add("I saw a pic where u're getting fucked by a big black man");
         strings_down.Add("U got f&#@₽d by step-dad again");
         strings_down.Add("U'll get ur asscrack blocked");
     }
