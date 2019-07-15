@@ -28,13 +28,9 @@ public class NativeShare : MonoBehaviour
 
         // Attaching screenshot here
         image = imageRect.rect;
-        Debug.Log(imageRect.position);
         image.position = camera.WorldToScreenPoint(imageRect.position);
-        Debug.Log(image.position);
-        Debug.Log(image.size);
         image.width *= camera.pixelWidth / screen.rect.width;
         image.height *= camera.pixelHeight/ screen.rect.height;
-        Debug.Log(image.size);
         _shareSheet.AttachScreenShot(image);
 
         // Show composer
